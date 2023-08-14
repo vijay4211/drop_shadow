@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    background:#000;
+}
+.shadow{
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background:linear-gradient(0deg, #000, #262626);
+    margin: 200px auto 0;
+}
+.shadow::before,
+.shadow::after{
+    content: '';
+    position: absolute;
+    /* top: 0px; */
+    /* left: 0px; */
+    top: -2px;
+    left: -2px;
+    /* imp */
+    background: linear-gradient(45deg, #fb0094, #0000ff,#00ff00,#ffff00,#ff0000,#fb0094, #0000ff,#00ff00,#ffff00,#ff0000);
+    /* imp */
+    background-size: 400%;
+    /* width: 40%; */
+    /* imp */
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    /* hide the background linear-gradient */
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+/* imp */
+.shadow::after{
+  filter: blur(20px);
+}
+@keyframes animate {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 300% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+
+
+/* 
+
+background-position: 0 0;===========
+0 0: These are the values you're providing for the background-position property. In this context, the first value (0) represents the horizontal position, and the second value (0) represents the vertical position.
+
+If you were to use different values, you could control the position of the background image relative to the element's top, bottom, left, or right edges. For example, background-position: center center; would center the background image within the element, and background-position: right bottom; would position the background image at the bottom-right corner of the element.
+
+*/
